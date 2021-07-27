@@ -35,9 +35,18 @@ namespace ipmi
         if (!pipe) throw std::runtime_error("popen() failed !!!");
         while (fgets(buffer, sizeof(buffer), pipe) != NULL)
         {
-            std::cerr << " Command : " << buffer << std::endl;
+            std::cerr << "Command : " << buffer << std::endl;
         }
         pclose(pipe);
+
+        while (1)   //Remove trailing white spaces
+        {
+            int len = std::strlen(buffer);
+            if(buffer[len - 1] == ' ' || buffer[len - 1] == '\n')
+                buffer[len - 1] = '\0';
+            else
+                break;
+        }
 
         token = std::strtok(buffer, " ");
         if (token == NULL)
@@ -46,7 +55,6 @@ namespace ipmi
                 "Fii system cmd : Error geting PCIe Info came back null");
             ipmi::responseUnspecifiedError();
         }
-        token = std::strtok(NULL, " ");
         while (token != NULL)
         {
             //std::cerr << " Command token: " << token << std::endl;
@@ -59,11 +67,29 @@ namespace ipmi
         return ipmi::responseSuccess(rsp);
     }
 
+    auto ipmiAppGetSystemIfCapabilities(uint8_t iface)
+        -> ipmi::RspType<uint8_t, uint8_t, uint8_t, uint8_t>
+    {
+
+        // Per IPMI 2.0 spec, the input and output buffer size must be the max
+        // buffer size minus one byte to allocate space for the length byte.
+        constexpr uint8_t reserved = 0x00;
+        constexpr uint8_t support = 0b10000000;
+        constexpr uint8_t inMsgSize = 240;
+        constexpr uint8_t outMsgSize = 240;
+
+        return ipmi::responseSuccess(reserved, support,
+                                 inMsgSize, outMsgSize);
+    }
     void registerSystemFunctions()
     {
         std::fprintf(stderr, "Registering OEM:[0x34], Cmd:[%#04X] for Fii System OEM Commands\n", FII_CMD_SYS_PCIE_INFO);
         ipmi::registerHandler(ipmi::prioOemBase, ipmi::netFnOemThree, FII_CMD_SYS_PCIE_INFO, ipmi::Privilege::User,
                 FiiSysPCIeInfo);
+
+        std::fprintf(stderr, "Registering APP:[0x06], Cmd:[%#04X] for Fii System OEM Commands\n", ipmi::app::cmdGetSystemIfCapabilities);
+        ipmi::registerHandler(ipmi::prioOemBase, ipmi::netFnApp, ipmi::app::cmdGetSystemIfCapabilities, ipmi::Privilege::User,
+                           ipmiAppGetSystemIfCapabilities);
 
         return;
     }
