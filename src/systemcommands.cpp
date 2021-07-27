@@ -1,7 +1,7 @@
 /********************************************************************************
 *                       HON HAI Precision IND.Co., LTD.                         *
 *            Personal Computer & Enterprise Product Business Group              *
-*                      Enterprise Product Business Gro:qup                      *
+*                      Enterprise Product Business Group                        *
 *                                                                               *
 *     Copyright (c) 2010 by FOXCONN/CESBG/CABG/SRD. All rights reserved.        *
 *     All data and information contained in this document is confidential       *
@@ -19,45 +19,38 @@
 #include <ipmid/api.hpp>
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/message/types.hpp>
+#include <fstream>
 
 namespace ipmi
     {
     static void registerSystemFunctions() __attribute__((constructor));
 
-    ipmi::RspType<std::vector<uint8_t>> FiiSysPCIeInfo(boost::asio::yield_context yield)
+    ipmi::RspType<uint8_t, uint8_t> FiiSysPCIeInfo(boost::asio::yield_context yield)
     {
-        std::vector<uint8_t> rsp;
-        char buffer[128], *token;
-        uint32_t value;
-        FILE *pipe = popen(PCIEINFO_COMMAND, "r");
+        uint8_t bifurcation, presence;
 
-        // Read pcie bifurcation information
-        // it return two bytes, 1st byte bifurcation, 2nd byte present pin
-        if (!pipe) throw std::runtime_error("popen() failed !!!");
-        while (fgets(buffer, sizeof(buffer), pipe) != NULL)
-        {
-            std::cerr << " Command : " << buffer << std::endl;
+        std::ifstream infile;
+        try {
+            infile.open(PCIEINFO_REG);
         }
-        pclose(pipe);
+        catch (const std::ifstream::failure& e) {
+            std::cerr << "Error opening/reading file" << std::endl;
+        }
+        std::string str;
 
-        token = std::strtok(buffer, " ");
-        if (token == NULL)
-        {
+        std::getline(infile, str);
+
+        infile.close();
+
+        if (str.empty()) {
             phosphor::logging::log<phosphor::logging::level::ERR>(
                 "Fii system cmd : Error geting PCIe Info came back null");
             ipmi::responseUnspecifiedError();
         }
-        token = std::strtok(NULL, " ");
-        while (token != NULL)
-        {
-            //std::cerr << " Command token: " << token << std::endl;
-            value = std::stoul(token, nullptr, 16);
-            //std::cerr << " Command value: " << value << ":" << std::hex << value << std::endl;
-            rsp.push_back(static_cast<uint8_t>(value & 0xFF));
-            token = std::strtok(NULL, " ");
-        }
 
-        return ipmi::responseSuccess(rsp);
+        std::sscanf(str.c_str(), "%x %x", &bifurcation, &presence);
+
+        return ipmi::responseSuccess(bifurcation, presence);
     }
 
     ipmi::RspType<uint8_t, uint8_t, uint8_t, uint8_t> ipmiAppGetSystemIfCapabilities(uint8_t iface)
@@ -75,9 +68,10 @@ namespace ipmi
 
     void registerSystemFunctions()
     {
-        std::fprintf(stderr, "Registering OEM:[0x34], Cmd:[%#04X] for Fii System OEM Commands\n", FII_CMD_SYS_PCIE_INFO);
-        ipmi::registerHandler(ipmi::prioOemBase, ipmi::netFnOemThree, FII_CMD_SYS_PCIE_INFO, ipmi::Privilege::User,
-                FiiSysPCIeInfo);
+        std::fprintf(stderr, "Registering OEM:[0x34], Cmd:[%#04X] for Fii System OEM Commands\n",
+            FII_CMD_SYS_PCIE_INFO);
+        ipmi::registerHandler(ipmi::prioOemBase, ipmi::netFnOemThree, FII_CMD_SYS_PCIE_INFO,
+            ipmi::Privilege::User, FiiSysPCIeInfo);
 
         std::fprintf(stderr, "Registering APP:[0x06], Cmd:[%#04X] for Fii System OEM Commands\n",
              ipmi::app::cmdGetSystemIfCapabilities);
@@ -87,4 +81,4 @@ namespace ipmi
 
         return;
     }
-}
+} // namespace ipmi
