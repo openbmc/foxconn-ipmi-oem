@@ -27,6 +27,8 @@
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/message/types.hpp>
 
-#define OP_CODE_READ	0b00
-#define OP_CODE_WRITE	0b01
-
+#define Boot_Count_Read    0x00
+#define Boot_Count_Write   0x01
+#define Boot_Count_Clear   0x02
+#define FII_CMD_BIOS_BOOT_COUNT 0x71
+#define FII_CMD_BIOS_BOOT_COUNT_LEN 5
