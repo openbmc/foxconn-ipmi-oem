@@ -16,6 +16,11 @@
 
 #include <common.hpp>
 #include <bioscommands.hpp>
+#include "sys_file_impl.hpp"
+#include <memory>
+#include <unistd.h>
+#include <boost/endian/arithmetic.hpp>
+#include <string.h>
 
 namespace ipmi
 {
@@ -35,36 +40,20 @@ namespace ipmi
         }
 
         op = reqParams[0] & 0b11;
-        // check the boot count file exist or not
-        std::fstream fptr(BOOT_COUNT_FILE);
+        //create a object for the SysFileImpl with its path and offset
+        auto file = std::make_unique<binstore::SysFileImpl>("/sys/bus/i2c/devices/4-0050/eeprom",
+                                                            1000);
+        boost::endian::little_uint32_t size = 0;
+        std::string readStr=file->readAsStr(0,sizeof(size));
 
-        if (!fptr.is_open())
+        char readStrCh[readStr.length()];
+        for (int i=0;i<sizeof(readStrCh);i++)
         {
-            std::cerr << " Fii bios cmd : file didn't exist and try to create one\n";
-            ret = system("mkdir -p /etc/conf");
-            std::ofstream outfile (BOOT_COUNT_FILE);
-            outfile << "0" << std::endl;
-            outfile.close();
-            boot_count.push_back(static_cast<uint8_t>(counter));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 8));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 16));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 24));
+            readStrCh[i] = readStr[i];
+            readStrCh[i] = (uint8_t)readStrCh[i];
+            boot_count.push_back(readStrCh[i]);
         }
-        else
-        {
-            std::string str;
-            while (std::getline(fptr, str))
-            {
-                //boot_count.push_back(static_cast<uint8_t>(std::stoul(str)));
-                counter = (std::stoul(str));
-                //std::cerr << " Fii bios cmd : " << counter << std::endl;
-            }
-            boot_count.push_back(static_cast<uint8_t>(counter));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 8));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 16));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 24));
-            fptr.close();
-        }
+
         if (op == OP_CODE_READ)
         {
             return ipmi::responseSuccess(boot_count);
@@ -88,9 +77,11 @@ namespace ipmi
                 boot_count.clear();
                 boot_count.insert(boot_count.begin(), reqParams.begin()+1, reqParams.end());
             }
-            std::ofstream fptr_w(BOOT_COUNT_FILE, std::ios::out | std::ios::trunc);
-            fptr_w << value << std::endl;
-            fptr_w.close();
+            
+            //convert the boot_count vector from uint8 to string
+            std::string s(boot_count.begin(),boot_count.end());
+            //write the data into EEPROM
+            file->writeStr(s,0);
         }
         else
         {
