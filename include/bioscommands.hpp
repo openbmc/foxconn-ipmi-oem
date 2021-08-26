@@ -15,12 +15,15 @@
 ********************************************************************************/
 
 #pragma once
-
-#define BOOT_COUNT_FILE "/etc/conf/bios.cnt"
-
-enum fii_bios_cmds
-{
-    FII_CMD_BIOS_BOOT_COUNT = 0x71,
-};
-
+#define BOOT_COUNT_READ    0x00
+#define BOOT_COUNT_WRITE   0x01
+#define BOOT_COUNT_CLEAR   0x02
+#define FII_CMD_BIOS_BOOT_COUNT 0x71
 #define FII_CMD_BIOS_BOOT_COUNT_LEN 5
+#define INITIAL_BOOT_COUNT_HEADER 0x00000001
+#define DEFAULT_VALUE 0xffffffff
+#define INITIAL_VALUE 0x00000000
+#define START_BOOT_COUNT_VALUE 0x00000001
+#define EEPROM_OFFSET 4096
+
+std::string EEPROM_PATH = "/sys/bus/i2c/devices/4-0050/eeprom";
