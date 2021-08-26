@@ -1,7 +1,7 @@
 /********************************************************************************
 *                       HON HAI Precision IND.Co., LTD.                         *
 *            Personal Computer & Enterprise Product Business Group              *
-*                      Enterprise Product Business Gro:qup                      *
+*                      Enterprise Product Business Group                        *
 *                                                                               *
 *     Copyright (c) 2010 by FOXCONN/CESBG/CABG/SRD. All rights reserved.        *
 *     All data and information contained in this document is confidential       *
@@ -13,20 +13,20 @@
 *     permission of FOXCONN/CESBG/CABG/SRD.                                     *
 *                                                                               *
 ********************************************************************************/
-#include <sys/stat.h>
-#include <fcntl.h>
+#pragma once
 #include <unistd.h>
-#include <iostream>
-#include <iomanip>
-#include <sstream>
-#include <fstream>
 
-#include <ipmid/api.hpp>
-#include <ipmid/utils.hpp>
-#include <ipmid/message.hpp>
-#include <phosphor-logging/log.hpp>
-#include <sdbusplus/message/types.hpp>
+#define eeprom_offset 4096
 
-#define OP_CODE_READ	0b00
-#define OP_CODE_WRITE	0b01
+std::string eeprom_path = "/sys/bus/i2c/devices/4-0050/eeprom";
+
+std::system_error errnoException(const std::string& message);
+
+void sysopen(const std::string& path, size_t offset);
+
+void lseek(size_t pos);
+
+void readBin(void *ptr, size_t pos, size_t size);
+
+void writeBin(void *ptr, size_t pos, size_t size);
 
