@@ -16,8 +16,6 @@
 
 #pragma once
 
-#define BOOT_COUNT_FILE "/etc/conf/bios.cnt"
-
 enum fii_bios_cmds
 {
     FII_CMD_BIOS_BOOT_COUNT = 0x71,

@@ -16,15 +16,113 @@
 
 #include <common.hpp>
 #include <bioscommands.hpp>
+#include <memory>
+#include <unistd.h>
+#include <boost/endian/arithmetic.hpp>
+#include <string.h>
+#include <fcntl.h>
+
+using namespace std::string_literals;
+
+int fd_;
+size_t offset_;
+uint8_t op;
+int boot_check;
+uint32_t value = 0;
+uint32_t boot_count; 
+std::string eeprom_path = "/sys/bus/i2c/devices/4-0050/eeprom";
+
+std::system_error errnoException(const std::string& message)
+{
+    return std::system_error(errno, std::generic_category(), message);
+}
+
+void sysopen(const std::string& path, size_t offset)
+{
+    fd_ = open(path.c_str(), O_RDWR);
+    offset_ = offset;
+    if (fd_ < 0)
+    {
+        throw errnoException("Error opening file "s + path);
+    }
+}
+
+void lseek(size_t pos)
+{
+    if (lseek(fd_, offset_ + pos, SEEK_SET) < 0)
+    {
+        throw errnoException("Cannot lseek to pos "s + std::to_string(pos));
+    }
+}
+
+size_t readToBuf(size_t pos, size_t count, char* buf)
+{
+    lseek(pos);
+    size_t bytesRead = 0;
+    do
+    {
+        auto ret = read(fd_, &buf[bytesRead], count - bytesRead);
+        if (ret < 0)
+        {
+            if (errno == EINTR)
+            {
+                continue;
+            }
+
+            throw errnoException("Error reading from file"s);
+        }
+        else if (ret > 0)
+        {
+            bytesRead += ret;
+        }
+        else // ret == 0
+        {
+            break;
+        }
+    } while (bytesRead < count);
+    return bytesRead;
+}
+
+void write32Bin(void *ptr, size_t pos)
+{
+    lseek(pos);
+    ssize_t ret;
+    ret = write(fd_,ptr,sizeof(*(uint32_t *)ptr));
+    if (ret < 0)
+    {
+        throw errnoException("Error writing to file"s);
+    }
+    if (static_cast<size_t>(ret) != sizeof(*(uint32_t *)ptr))
+    {
+        throw std::runtime_error(
+                "Tried to send data size "s + std::to_string(sizeof(*(uint32_t *)ptr)) +
+                " but could only send "s + std::to_string(ret));
+    }
+}
+
+void write8Bin(void *ptr, size_t pos)
+{
+    lseek(pos);
+    ssize_t ret;
+    ret = write(fd_,ptr,sizeof(*(uint8_t *)ptr));
+    if (ret < 0)
+    {
+        throw errnoException("Error writing to file"s);
+    }
+    if (static_cast<size_t>(ret) != sizeof(*(uint8_t *)ptr))
+    {
+        throw std::runtime_error(
+                "Tried to send data size "s + std::to_string(sizeof(*(uint8_t *)ptr)) +
+                " but could only send "s + std::to_string(ret));
+    }
+}
 
 namespace ipmi
 {
     static void registerBIOSFunctions() __attribute__((constructor));
 
-    ipmi::RspType<std::vector<uint8_t>> FiiBIOSBootCount(boost::asio::yield_context yield, std::vector<uint8_t> reqParams)
+    ipmi::RspType<uint32_t> FiiBIOSBootCount(boost::asio::yield_context yield, std::vector<uint8_t> reqParams)
     {
-        bool op;
-        std::vector<uint8_t> boot_count;
         uint32_t counter = 0, ret;
 
         if (reqParams.empty())
@@ -34,63 +132,69 @@ namespace ipmi
             return ipmi::responseReqDataLenInvalid();
         }
 
+        sysopen(eeprom_path,4096);
         op = reqParams[0] & 0b11;
-        // check the boot count file exist or not
-        std::fstream fptr(BOOT_COUNT_FILE);
+        boost::endian::little_uint8_t checker = 0;
+        readToBuf(4, sizeof(checker), reinterpret_cast<char*>(&checker));
+        boot_check = (int)checker;
 
-        if (!fptr.is_open())
+        if(boot_check != 1 && op == OP_CODE_READ)
         {
-            std::cerr << " Fii bios cmd : file didn't exist and try to create one\n";
-            ret = system("mkdir -p /etc/conf");
-            std::ofstream outfile (BOOT_COUNT_FILE);
-            outfile << "0" << std::endl;
-            outfile.close();
-            boot_count.push_back(static_cast<uint8_t>(counter));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 8));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 16));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 24));
-        }
-        else
-        {
-            std::string str;
-            while (std::getline(fptr, str))
-            {
-                //boot_count.push_back(static_cast<uint8_t>(std::stoul(str)));
-                counter = (std::stoul(str));
-                //std::cerr << " Fii bios cmd : " << counter << std::endl;
-            }
-            boot_count.push_back(static_cast<uint8_t>(counter));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 8));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 16));
-            boot_count.push_back(static_cast<uint8_t>(counter >> 24));
-            fptr.close();
-        }
-        if (op == OP_CODE_READ)
-        {
+            boot_count = 0x00000000;
             return ipmi::responseSuccess(boot_count);
         }
-        else if (op == OP_CODE_WRITE)
+
+        else if (op == OP_CODE_READ && boot_check == 1)
         {
-            uint32_t value = 0;
+            boost::endian::little_uint32_t checker = 0;
+            readToBuf(0, sizeof(checker), reinterpret_cast<char*>(&checker));
+            return ipmi::responseSuccess(checker);
+        }
+
+        else if (op == OP_CODE_CLEAR)
+        {
+            uint32_t default_val = 0xffffffff;
+            uint8_t clear_set = 0xff;
+            write32Bin(&default_val,0);
+            write8Bin(&clear_set,4);
+            return ipmi::responseSuccess(default_val);
+
+        }
+        else if (op == OP_CODE_WRITE && boot_check != 1)
+        {
+            boost::endian::little_uint32_t checker = 0;
+            readToBuf(0, sizeof(checker), reinterpret_cast<char*>(&checker));
+            uint8_t boot_set = 0x01;
+            std::cout << "Araara " << "boot set is  " << boot_set << std::endl;
             if (reqParams.size() == 1)
             {
-                value = boot_count[0] + (boot_count[1] << 8) + (boot_count[2] << 16) + (boot_count[3] << 24);
-                value += 1;
-                boot_count.clear();
-                boot_count.push_back(static_cast<uint8_t>(value));
-                boot_count.push_back(static_cast<uint8_t>(value >> 8));
-                boot_count.push_back(static_cast<uint8_t>(value >> 16));
-                boot_count.push_back(static_cast<uint8_t>(value >> 24));
+                boot_count = 0x01;
+                write32Bin(&boot_count,0);
+                write8Bin(&boot_set,4);
             }
             else if (reqParams.size() == FII_CMD_BIOS_BOOT_COUNT_LEN)
             {
                 value = reqParams[1] + + (reqParams[2] << 8) + (reqParams[3] << 16) + (reqParams[4] << 24);
-                boot_count.clear();
-                boot_count.insert(boot_count.begin(), reqParams.begin()+1, reqParams.end());
+                boot_count = value;
+                write32Bin(&boot_count,0);
+                write8Bin(&boot_set,4);
             }
-            std::ofstream fptr_w(BOOT_COUNT_FILE, std::ios::out | std::ios::trunc);
-            fptr_w << value << std::endl;
-            fptr_w.close();
+        }
+        else if (op == OP_CODE_WRITE && boot_check == 1)
+        {
+            boost::endian::little_uint32_t checker = 0;
+            readToBuf(0, sizeof(checker), reinterpret_cast<char*>(&checker));
+            if (reqParams.size() == 1)
+            {
+                value = checker + 1;
+                boot_count = value;
+            }
+            else if (reqParams.size() == FII_CMD_BIOS_BOOT_COUNT_LEN)
+            {
+                value = reqParams[1] + + (reqParams[2] << 8) + (reqParams[3] << 16) + (reqParams[4] << 24);
+                boot_count = value;
+            }
+            write32Bin(&boot_count,0);
         }
         else
         {
@@ -108,3 +212,4 @@ namespace ipmi
         return;
     }
 }
+
