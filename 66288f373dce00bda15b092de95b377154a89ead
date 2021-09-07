@@ -22,6 +22,121 @@
       "revId": "66288f373dce00bda15b092de95b377154a89ead",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e68e53c_1eb39ab3",
+        "filename": "include/bioshelper.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-09-07T20:05:44Z",
+      "side": 1,
+      "message": "size is not used anywhere. so the type can be directly passed here.",
+      "range": {
+        "startLine": 27,
+        "startChar": 48,
+        "endLine": 27,
+        "endChar": 52
+      },
+      "revId": "66288f373dce00bda15b092de95b377154a89ead",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "46aa4b6c_3b75339b",
+        "filename": "include/bioshelper.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-09-07T20:05:44Z",
+      "side": 1,
+      "message": "What is this function for?",
+      "range": {
+        "startLine": 39,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 1
+      },
+      "revId": "66288f373dce00bda15b092de95b377154a89ead",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c57b553d_979c9b46",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-09-07T20:05:44Z",
+      "side": 1,
+      "message": "I think this function can be rewritten. \nInstead of a vector, use uint32_t and this can help with avoiding those logic of creating a vector by pushing and popping.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 39
+      },
+      "revId": "66288f373dce00bda15b092de95b377154a89ead",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a127b51_a82a7ad0",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-09-07T20:05:44Z",
+      "side": 1,
+      "message": "Char limit is 100.",
+      "range": {
+        "startLine": 36,
+        "startChar": 12,
+        "endLine": 36,
+        "endChar": 107
+      },
+      "revId": "66288f373dce00bda15b092de95b377154a89ead",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45287f6b_79f70b1f",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-09-07T20:05:44Z",
+      "side": 1,
+      "message": "This logic can be casted to uint32 and operated on.",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 99,
+        "endChar": 72
+      },
+      "revId": "66288f373dce00bda15b092de95b377154a89ead",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
