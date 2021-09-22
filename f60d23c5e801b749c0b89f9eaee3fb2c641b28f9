@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "caeef3c1_ad1e4712",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-09-22T21:38:25Z",
+      "side": 1,
+      "message": "Commit message should not exceed 72 characters. some of these lines are over the limit.",
+      "revId": "f60d23c5e801b749c0b89f9eaee3fb2c641b28f9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b5f8901_7e00b85b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 12
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-09-22T21:38:25Z",
+      "side": 1,
+      "message": "Since this repo is foxconn-ipmi-oem, we don\u0027t need this tag. This is typically used for tagging a sub directory in a repo that has multiple packages or meta-layers.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 18
+      },
+      "revId": "f60d23c5e801b749c0b89f9eaee3fb2c641b28f9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
