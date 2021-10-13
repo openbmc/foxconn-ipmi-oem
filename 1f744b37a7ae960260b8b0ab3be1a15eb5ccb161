@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "7f656cc7_5621e713",
+        "filename": "include/file_handling.hpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:18:12Z",
+      "side": 1,
+      "message": "Should not be present here. Already defined in the other header.",
+      "range": {
+        "startLine": 18,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 63
+      },
+      "revId": "1f744b37a7ae960260b8b0ab3be1a15eb5ccb161",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "21befa95_e0bd56d5",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:18:12Z",
+      "side": 1,
+      "message": "Add \"count\" in the name to be clear.",
+      "range": {
+        "startLine": 37,
+        "startChar": 7,
+        "endLine": 37,
+        "endChar": 16
+      },
+      "revId": "1f744b37a7ae960260b8b0ab3be1a15eb5ccb161",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0225886f_1808d6d0",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:18:12Z",
+      "side": 1,
+      "message": "This can be just magic/header. Since structure name will have boot_count. the members can be named what it denotes within the structure.\nSame for boot_count. It can be just count",
+      "range": {
+        "startLine": 39,
+        "startChar": 13,
+        "endLine": 39,
+        "endChar": 30
+      },
+      "revId": "1f744b37a7ae960260b8b0ab3be1a15eb5ccb161",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be292356_2ae2d048",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:18:12Z",
+      "side": 1,
+      "message": "Can this be split in to 2 different commands? One for writing explicit value and other for increment? That will simplify the whole logic.",
+      "range": {
+        "startLine": 95,
+        "startChar": 1,
+        "endLine": 110,
+        "endChar": 9
+      },
+      "revId": "1f744b37a7ae960260b8b0ab3be1a15eb5ccb161",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe43bef3_2bbb9188",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 24
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:18:12Z",
+      "side": 1,
+      "message": "If write and increment are separated, there will be no need to check the request size.",
+      "range": {
+        "startLine": 60,
+        "startChar": 1,
+        "endLine": 110,
+        "endChar": 9
+      },
+      "revId": "1f744b37a7ae960260b8b0ab3be1a15eb5ccb161",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
