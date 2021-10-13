@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e70393f8_40cfb575",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:02:12Z",
+      "side": 1,
+      "message": "This does not need to be vector. This is always going to be 2 bytes. \n1st byte for presence and 2nd byte for bifurcation. \nChange it to ipmi::RspType\u003cuint8_t, uint8_t\u003e",
+      "range": {
+        "startLine": 27,
+        "startChar": 18,
+        "endLine": 27,
+        "endChar": 38
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "22623f10_c980a562",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:02:12Z",
+      "side": 1,
+      "message": "The whole logic can be rewritten to \nifstream file open\nuse std::getline \nuse sscanf and extract the bifurcation and presence info",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 0
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
