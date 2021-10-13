@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "0c68736d_f51cf2fc",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:04:25Z",
+      "side": 1,
+      "message": "Openbmc does not intend the namespace scopes. so need to align all the lines within the namespace has to be fixed.",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 5
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e70393f8_40cfb575",
         "filename": "src/systemcommands.cpp",
         "patchSetId": 5
@@ -41,6 +64,29 @@
         "startChar": 0,
         "endLine": 71,
         "endChar": 0
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d8a37d4d_a413a66c",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-13T00:04:25Z",
+      "side": 1,
+      "message": "Rewrite these lines to limit to 100 chars",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 32
       },
       "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
