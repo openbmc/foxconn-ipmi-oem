@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "54e455ca_515c8980",
+        "filename": "include/bioscommands.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2021-10-17T04:05:37Z",
+      "side": 1,
+      "message": "INITIAL has been removed",
+      "parentUuid": "e7a467c8_c02ea5d5",
+      "range": {
+        "startLine": 25,
+        "startChar": 8,
+        "endLine": 25,
+        "endChar": 33
+      },
+      "revId": "c23043748ba22a79d5abf8d806bb91a7276cb291",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1f28795e_f6df2939",
         "filename": "include/file_handling.hpp",
         "patchSetId": 25
@@ -42,6 +66,24 @@
     },
     {
       "key": {
+        "uuid": "3802d077_a4381fe1",
+        "filename": "include/file_handling.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2021-10-17T04:05:37Z",
+      "side": 1,
+      "message": "close helper function has been created",
+      "parentUuid": "1f28795e_f6df2939",
+      "revId": "c23043748ba22a79d5abf8d806bb91a7276cb291",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9edc8536_702db461",
         "filename": "src/bioscommands.cpp",
         "patchSetId": 25
@@ -53,6 +95,24 @@
       "writtenOn": "2021-10-13T22:02:40Z",
       "side": 1,
       "message": "Move the reqParams.size() validation before the switch cases. \nlike \nrequest size validation block and return on error.\nthen switch-case for operation.",
+      "revId": "c23043748ba22a79d5abf8d806bb91a7276cb291",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1329d993_c35458ef",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2021-10-17T04:05:37Z",
+      "side": 1,
+      "message": "Took the reqparams out and checked the corner case",
+      "parentUuid": "9edc8536_702db461",
       "revId": "c23043748ba22a79d5abf8d806bb91a7276cb291",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -82,6 +142,30 @@
     },
     {
       "key": {
+        "uuid": "1d8647b6_d6ca9fb9",
+        "filename": "src/file_handling.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2021-10-17T04:05:37Z",
+      "side": 1,
+      "message": "returned file descriptor and passed it as a parameter to other helper functions",
+      "parentUuid": "6ad153a8_ff3d6cbb",
+      "range": {
+        "startLine": 4,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 15
+      },
+      "revId": "c23043748ba22a79d5abf8d806bb91a7276cb291",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "829101e8_af900bd4",
         "filename": "src/file_handling.cpp",
         "patchSetId": 25
@@ -93,6 +177,30 @@
       "writtenOn": "2021-10-13T22:02:40Z",
       "side": 1,
       "message": "File close is missing.",
+      "range": {
+        "startLine": 13,
+        "startChar": 5,
+        "endLine": 13,
+        "endChar": 12
+      },
+      "revId": "c23043748ba22a79d5abf8d806bb91a7276cb291",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a3a348e_606eb7fc",
+        "filename": "src/file_handling.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2021-10-17T04:05:37Z",
+      "side": 1,
+      "message": "file close has been added",
+      "parentUuid": "829101e8_af900bd4",
       "range": {
         "startLine": 13,
         "startChar": 5,
