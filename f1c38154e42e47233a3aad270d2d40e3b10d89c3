@@ -1,0 +1,216 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c0ce391c_f6a65d65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 30
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "Don\u0027t need to mention decimal. \nJust use 0x prefix for hex and default will be considered decimal.",
+      "range": {
+        "startLine": 12,
+        "startChar": 41,
+        "endLine": 12,
+        "endChar": 50
+      },
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ad091ae7_a6d6e388",
+        "filename": "README.md",
+        "patchSetId": 30
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "Clear should set the boot count to 0",
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e6bb9be_9555fcb1",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "Are all these headers required?",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 17
+      },
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e73aaae_1b6f807f",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "boot_count_operation should be local to the function",
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59aa8bc6_24a4590b",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "Coding style: leave space after \",\" in arguments",
+      "range": {
+        "startLine": 50,
+        "startChar": 32,
+        "endLine": 50,
+        "endChar": 33
+      },
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b9e7fb0_936a3289",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "replace tab with space",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 1
+      },
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c21c4396_9a774a17",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "Error should be responseReqDataLenInvalid",
+      "range": {
+        "startLine": 67,
+        "startChar": 17,
+        "endLine": 67,
+        "endChar": 44
+      },
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1d41e83_aff760e5",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 92,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "When boot count is cleared, it means the value should be reset to 0. \nSo the header should remain and value should be set to 0.",
+      "range": {
+        "startLine": 92,
+        "startChar": 26,
+        "endLine": 92,
+        "endChar": 39
+      },
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e431667d_e88936c6",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "tab to space",
+      "range": {
+        "startLine": 97,
+        "startChar": 0,
+        "endLine": 97,
+        "endChar": 1
+      },
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "420810f1_6e513044",
+        "filename": "src/file_handling.cpp",
+        "patchSetId": 30
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-10-28T18:50:28Z",
+      "side": 1,
+      "message": "Having it global will cause issues if any other command uses this function. I think PCIe command will be using file operations too.\nI don\u0027t think you need to support offset in sysopen. You can just open it and do the actual offset operation in the read and write and pass the correct offsets from the calling function.",
+      "revId": "f1c38154e42e47233a3aad270d2d40e3b10d89c3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
