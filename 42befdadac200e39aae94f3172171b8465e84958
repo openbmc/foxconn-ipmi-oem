@@ -1,0 +1,90 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "56a6fd96_0ccd0668",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-11-10T18:45:58Z",
+      "side": 1,
+      "message": "No need for this prefix since the repo is foxconn-ipmi-oem",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "42befdadac200e39aae94f3172171b8465e84958",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba7e613c_d2e7be61",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-11-10T18:45:58Z",
+      "side": 1,
+      "message": "Name this to bifurcation and presence so it is clear in what is being read and sent as response to this command",
+      "revId": "42befdadac200e39aae94f3172171b8465e84958",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89640cf8_cbc3a3cc",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-11-10T18:45:58Z",
+      "side": 1,
+      "message": "Extra spaces.",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 4
+      },
+      "revId": "42befdadac200e39aae94f3172171b8465e84958",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15920352_a9755cac",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-11-10T18:45:58Z",
+      "side": 1,
+      "message": "is this validated with the file\u0027s output format?",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 52
+      },
+      "revId": "42befdadac200e39aae94f3172171b8465e84958",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
