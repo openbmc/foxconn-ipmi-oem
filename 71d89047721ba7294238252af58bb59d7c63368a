@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "97b8f590_df7a5a05",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 37
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2021-11-18T20:47:22Z",
+      "side": 1,
+      "message": "This one has been modified in a way where the file is not opened until all the corner cases that lead to error code. In this way we don\u0027t need to close the file once error response occurs because the file is not opened at that point in code.",
+      "parentUuid": "1534a3bc_53c2f94a",
+      "revId": "71d89047721ba7294238252af58bb59d7c63368a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4625aabe_ef43b843",
         "filename": "src/bioscommands.cpp",
         "patchSetId": 37
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "35082de0_07a8c7c5",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 37
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2021-11-18T20:47:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4625aabe_ef43b843",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 70
+      },
+      "revId": "71d89047721ba7294238252af58bb59d7c63368a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "26c8e582_3b82ee54",
         "filename": "src/bioscommands.cpp",
         "patchSetId": 37
@@ -62,6 +104,30 @@
       "revId": "71d89047721ba7294238252af58bb59d7c63368a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1afeb8a_acb63cb1",
+        "filename": "src/bioscommands.cpp",
+        "patchSetId": 37
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2021-11-18T20:47:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "26c8e582_3b82ee54",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 11
+      },
+      "revId": "71d89047721ba7294238252af58bb59d7c63368a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
