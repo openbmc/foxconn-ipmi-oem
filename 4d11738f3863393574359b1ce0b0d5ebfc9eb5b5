@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa14717d_d9da8421",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 39
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2021-11-18T21:12:29Z",
+      "side": 1,
+      "message": "No longer called fcntl. can stop the line at \"helper functions\"",
+      "range": {
+        "startLine": 15,
+        "startChar": 46,
+        "endLine": 15,
+        "endChar": 51
+      },
+      "revId": "4d11738f3863393574359b1ce0b0d5ebfc9eb5b5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
