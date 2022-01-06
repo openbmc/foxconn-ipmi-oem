@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "56a6fd96_0ccd0668",
         "filename": "/COMMIT_MSG",
@@ -20,10 +21,34 @@
         "endChar": 17
       },
       "revId": "42befdadac200e39aae94f3172171b8465e84958",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc469ef2_9b20bb2b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001294
+      },
+      "writtenOn": "2022-01-06T20:02:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "56a6fd96_0ccd0668",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 17
+      },
+      "revId": "42befdadac200e39aae94f3172171b8465e84958",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "ba7e613c_d2e7be61",
         "filename": "src/systemcommands.cpp",
@@ -37,10 +62,28 @@
       "side": 1,
       "message": "Name this to bifurcation and presence so it is clear in what is being read and sent as response to this command",
       "revId": "42befdadac200e39aae94f3172171b8465e84958",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "618d3638_684939b6",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001294
+      },
+      "writtenOn": "2022-01-06T20:02:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ba7e613c_d2e7be61",
+      "revId": "42befdadac200e39aae94f3172171b8465e84958",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "89640cf8_cbc3a3cc",
         "filename": "src/systemcommands.cpp",
@@ -60,10 +103,34 @@
         "endChar": 4
       },
       "revId": "42befdadac200e39aae94f3172171b8465e84958",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdce56a5_3b2f2168",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1001294
+      },
+      "writtenOn": "2022-01-06T20:02:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "89640cf8_cbc3a3cc",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 4
+      },
+      "revId": "42befdadac200e39aae94f3172171b8465e84958",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "15920352_a9755cac",
         "filename": "src/systemcommands.cpp",
@@ -83,8 +150,31 @@
         "endChar": 52
       },
       "revId": "42befdadac200e39aae94f3172171b8465e84958",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6bd67502_c83c33d1",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1001294
+      },
+      "writtenOn": "2022-01-06T20:02:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15920352_a9755cac",
+      "range": {
+        "startLine": 52,
+        "startChar": 4,
+        "endLine": 52,
+        "endChar": 52
+      },
+      "revId": "42befdadac200e39aae94f3172171b8465e84958",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }

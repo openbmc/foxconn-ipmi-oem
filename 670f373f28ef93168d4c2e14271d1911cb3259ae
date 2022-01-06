@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "0c68736d_f51cf2fc",
         "filename": "src/systemcommands.cpp",
@@ -20,10 +21,34 @@
         "endChar": 5
       },
       "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d9757be_10eaee53",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001294
+      },
+      "writtenOn": "2022-01-06T20:02:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c68736d_f51cf2fc",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 5
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "e70393f8_40cfb575",
         "filename": "src/systemcommands.cpp",
@@ -43,10 +68,34 @@
         "endChar": 38
       },
       "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "459380f3_5f32014b",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1001294
+      },
+      "writtenOn": "2022-01-06T20:02:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e70393f8_40cfb575",
+      "range": {
+        "startLine": 27,
+        "startChar": 18,
+        "endLine": 27,
+        "endChar": 38
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "22623f10_c980a562",
         "filename": "src/systemcommands.cpp",
@@ -66,10 +115,34 @@
         "endChar": 0
       },
       "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d19c233_9ed69130",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1001294
+      },
+      "writtenOn": "2022-01-06T20:02:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22623f10_c980a562",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 0
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "d8a37d4d_a413a66c",
         "filename": "src/systemcommands.cpp",
@@ -89,8 +162,31 @@
         "endChar": 32
       },
       "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cfc2feb9_fc3136fe",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1001294
+      },
+      "writtenOn": "2022-01-06T20:02:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d8a37d4d_a413a66c",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 32
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
