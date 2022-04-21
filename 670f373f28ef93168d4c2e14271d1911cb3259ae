@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cfc1783f_a245b158",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000908
+      },
+      "writtenOn": "2022-04-21T19:51:40Z",
+      "side": 1,
+      "message": "We can make another patchset to address the code syntax, so this patchset is focused on PCIe bifurcation changes.",
+      "parentUuid": "4d9757be_10eaee53",
+      "range": {
+        "startLine": 24,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 5
+      },
+      "revId": "670f373f28ef93168d4c2e14271d1911cb3259ae",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e70393f8_40cfb575",
         "filename": "src/systemcommands.cpp",
         "patchSetId": 5
