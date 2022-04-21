@@ -22,63 +22,61 @@
 #include <fstream>
 
 namespace ipmi
-    {
-    static void registerSystemFunctions() __attribute__((constructor));
+{
+static void registerSystemFunctions() __attribute__((constructor));
 
-    ipmi::RspType<uint8_t, uint8_t> FiiSysPCIeInfo(boost::asio::yield_context yield)
-    {
-        uint8_t bifurcation, presence;
+ipmi::RspType<uint8_t, uint8_t> FiiSysPCIeInfo(boost::asio::yield_context yield)
+{
+    uint8_t bifurcation, presence;
 
-        std::ifstream infile;
-        try {
-            infile.open(PCIEINFO_REG);
-        }
-        catch (const std::ifstream::failure& e) {
-            std::cerr << "Error opening/reading file" << std::endl;
-        }
-        std::string str;
+    std::ifstream infile;
+    try {
+        infile.open(PCIEINFO_REG);
+    }
+    catch (const std::ifstream::failure& e) {
+        std::cerr << "Error opening/reading file" << std::endl;
+    }
+    std::string str;
 
-        std::getline(infile, str);
+    std::getline(infile, str);
 
-        infile.close();
+    infile.close();
 
-        if (str.empty()) {
-            phosphor::logging::log<phosphor::logging::level::ERR>(
-                "Fii system cmd : Error geting PCIe Info came back null");
-            ipmi::responseUnspecifiedError();
-        }
-
-        std::sscanf(str.c_str(), "%x %x", &bifurcation, &presence);
-
-        return ipmi::responseSuccess(bifurcation, presence);
+    if (str.empty()) {
+        phosphor::logging::log<phosphor::logging::level::ERR>(
+            "Fii system cmd : Error geting PCIe Info came back null");
+        ipmi::responseUnspecifiedError();
     }
 
-    ipmi::RspType<uint8_t, uint8_t, uint8_t, uint8_t> ipmiAppGetSystemIfCapabilities(uint8_t iface)
-    {
-        // Per IPMI 2.0 spec, the input and output buffer size must be the max
-        // buffer size minus one byte to allocate space for the length byte.
-        constexpr uint8_t reserved = 0x00;
-        constexpr uint8_t support = 0b10000000;
-        constexpr uint8_t inMsgSize = 240;
-        constexpr uint8_t outMsgSize = 240;
+    std::sscanf(str.c_str(), "%x %x", &bifurcation, &presence);
 
-        return ipmi::responseSuccess(reserved, support,
-                                     inMsgSize, outMsgSize);
-    }
+    return ipmi::responseSuccess(bifurcation, presence);
+}
 
-    void registerSystemFunctions()
-    {
-        std::fprintf(stderr, "Registering OEM:[0x34], Cmd:[%#04X] for Fii System OEM Commands\n",
-            FII_CMD_SYS_PCIE_INFO);
-        ipmi::registerHandler(ipmi::prioOemBase, ipmi::netFnOemThree, FII_CMD_SYS_PCIE_INFO,
-            ipmi::Privilege::User, FiiSysPCIeInfo);
+ipmi::RspType<uint8_t, uint8_t, uint8_t, uint8_t> ipmiAppGetSystemIfCapabilities(uint8_t iface)
+{
+    // Per IPMI 2.0 spec, the input and output buffer size must be the max
+    // buffer size minus one byte to allocate space for the length byte.
+    uint8_t reserved = 0x00;
+    uint8_t support = 0b10000000;
+    uint8_t inMsgSize = 240;
+    uint8_t outMsgSize = 240;
 
-        std::fprintf(stderr, "Registering APP:[0x06], Cmd:[%#04X] for Fii System OEM Commands\n",
-             ipmi::app::cmdGetSystemIfCapabilities);
-        ipmi::registerHandler(ipmi::prioOemBase, ipmi::netFnApp,
-                             ipmi::app::cmdGetSystemIfCapabilities,
-                             ipmi::Privilege::User, ipmiAppGetSystemIfCapabilities);
+    return ipmi::responseSuccess(reserved, support,
+                                inMsgSize, outMsgSize);
+}
 
-        return;
-    }
+void registerSystemFunctions()
+{
+    std::fprintf(stderr, "Registering OEM:[0x34], Cmd:[%#04X] for Fii System OEM Commands\n",
+        FII_CMD_SYS_PCIE_INFO);
+    ipmi::registerHandler(ipmi::prioOemBase, ipmi::netFnOemThree, FII_CMD_SYS_PCIE_INFO,
+        ipmi::Privilege::User, FiiSysPCIeInfo);
+
+    std::fprintf(stderr, "Registering APP:[0x06], Cmd:[%#04X] for Fii System OEM Commands\n",
+        ipmi::app::cmdGetSystemIfCapabilities);
+    ipmi::registerHandler(ipmi::prioOemBase, ipmi::netFnApp, ipmi::app::cmdGetSystemIfCapabilities,
+        ipmi::Privilege::User, ipmiAppGetSystemIfCapabilities);
+
+}
 } // namespace ipmi
