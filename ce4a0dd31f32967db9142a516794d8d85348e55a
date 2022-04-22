@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69fc237c_01f56a15",
+        "filename": "include/systemcommands.hpp",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001048
+      },
+      "writtenOn": "2022-04-22T17:29:06Z",
+      "side": 1,
+      "message": "Have you thought about using constexpr instead #define ..?",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 7
+      },
+      "revId": "ce4a0dd31f32967db9142a516794d8d85348e55a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc6a8902_cfacab81",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 23
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001048
+      },
+      "writtenOn": "2022-04-22T17:29:06Z",
+      "side": 1,
+      "message": "requires initialization ..?",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 37
+      },
+      "revId": "ce4a0dd31f32967db9142a516794d8d85348e55a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
