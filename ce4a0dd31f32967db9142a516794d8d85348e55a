@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7b248bca_a6c5bc80",
+        "filename": "include/systemcommands.hpp",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2022-05-03T22:20:03Z",
+      "side": 1,
+      "message": "constexpr is typed and hence safer in certain scenarios. Since we are dealing with a string I don\u0027t see how one would necessarily be better than the other.",
+      "parentUuid": "69fc237c_01f56a15",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 7
+      },
+      "revId": "ce4a0dd31f32967db9142a516794d8d85348e55a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dc6a8902_cfacab81",
         "filename": "src/systemcommands.cpp",
         "patchSetId": 23
@@ -37,6 +61,30 @@
       "writtenOn": "2022-04-22T17:29:06Z",
       "side": 1,
       "message": "requires initialization ..?",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 37
+      },
+      "revId": "ce4a0dd31f32967db9142a516794d8d85348e55a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a1d4bf82_3da1e3c3",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 23
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2022-05-03T22:20:03Z",
+      "side": 1,
+      "message": "The presence variable isn\u0027t used before the sscanf where it\u0027s value is updated. It is only being accessed after that and any initialisation we do will be overwritten.",
+      "parentUuid": "dc6a8902_cfacab81",
       "range": {
         "startLine": 30,
         "startChar": 29,
