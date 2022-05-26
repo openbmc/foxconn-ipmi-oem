@@ -48,6 +48,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "88ccb53a_a302e1ec",
+        "filename": "include/systemcommands.hpp",
+        "patchSetId": 23
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2022-05-26T14:50:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b248bca_a6c5bc80",
+      "range": {
+        "startLine": 19,
+        "startChar": 0,
+        "endLine": 19,
+        "endChar": 7
+      },
+      "revId": "ce4a0dd31f32967db9142a516794d8d85348e55a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc6a8902_cfacab81",
@@ -85,6 +109,30 @@
       "side": 1,
       "message": "The presence variable isn\u0027t used before the sscanf where it\u0027s value is updated. It is only being accessed after that and any initialisation we do will be overwritten.",
       "parentUuid": "dc6a8902_cfacab81",
+      "range": {
+        "startLine": 30,
+        "startChar": 29,
+        "endLine": 30,
+        "endChar": 37
+      },
+      "revId": "ce4a0dd31f32967db9142a516794d8d85348e55a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20bc686e_f9a6c40a",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 23
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001168
+      },
+      "writtenOn": "2022-05-26T14:50:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a1d4bf82_3da1e3c3",
       "range": {
         "startLine": 30,
         "startChar": 29,
