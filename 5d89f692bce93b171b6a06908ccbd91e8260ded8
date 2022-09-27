@@ -26,6 +26,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "e02334cb_78c83ce4",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1001395
+      },
+      "writtenOn": "2022-09-27T14:33:02Z",
+      "side": 1,
+      "message": "https://gerrit.openbmc.org/c/openbmc/foxconn-ipmi-oem/+/45296/comment/dc6a8902_cfacab81/",
+      "parentUuid": "7097783b_cdd94d9c",
+      "range": {
+        "startLine": 30,
+        "startChar": 25,
+        "endLine": 30,
+        "endChar": 33
+      },
+      "revId": "5d89f692bce93b171b6a06908ccbd91e8260ded8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "62ec8595_d63e3a13",
         "filename": "src/systemcommands.cpp",
         "patchSetId": 2
