@@ -46,7 +46,7 @@ if (NOT YOCTO) # headers that can't be built without yocto
     link_directories (${CMAKE_BINARY_DIR}/sdbusplus-src/.libs)
     include_directories (SYSTEM ${CMAKE_BINARY_DIR}/phosphor-logging-src)
     link_directories (${CMAKE_BINARY_DIR}/phosphor-logging-src/.libs)
-    include_directories (SYSTEM ${CMAKE_BINARY_DIR}/phosphor-ipmi-host/include)
+    include_directories (SYSTEM ${CMAKE_BINARY_DIR}/phosphor-host-ipmid/include)
     include_directories (SYSTEM ${CMAKE_BINARY_DIR}/ipmid/user_channel)
     include_directories (SYSTEM ${CMAKE_BINARY_DIR}) # link_directories  (${CMAK
                                                      # E_BINARY_DIR}/sdbusplus-
