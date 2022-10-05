@@ -34,7 +34,7 @@ void lseeker(int fd_, size_t offset)
 void readBin(int fd_, size_t offset, void *ptr, size_t size)
 {
     lseeker(fd_, offset);
-    size_t ret = read(fd_, ptr, size);
+    ssize_t ret = read(fd_, ptr, size);
     if(ret < 0 )
     {
         throw errnoException("Error reading from file"s);

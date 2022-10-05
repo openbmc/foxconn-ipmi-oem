@@ -4,7 +4,7 @@ cmake_policy (SET CMP0054 NEW)
 
 option (YOCTO "Use YOCTO depedencies system" OFF)
 include (ExternalProject)
-set (CMAKE_CXX_STANDARD 17)
+set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set (CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${CMAKE_MODULE_PATH})
 
@@ -30,6 +30,12 @@ add_definitions (-DBOOST_COROUTINES_NO_DEPRECATION_WARNING)
 add_definitions (-Wno-psabi)
 
 if (NOT YOCTO) # headers that can't be built without yocto
+
+    execute_process(
+        COMMAND ${CMAKE_CXX_COMPILER} -dumpmachine
+        OUTPUT_VARIABLE TRIPLE OUTPUT_STRIP_TRAILING_WHITESPACE)
+    message(STATUS "Target triple: ${TRIPLE}")
+
     include_directories (SYSTEM non-yocto)
 
     configure_file (CMakeLists.txt.in 3rdparty/CMakeLists.txt)
@@ -41,6 +47,7 @@ if (NOT YOCTO) # headers that can't be built without yocto
     set (CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR}/prefix ${CMAKE_PREFIX_PATH})
     include_directories (SYSTEM ${CMAKE_BINARY_DIR}/prefix/include)
     link_directories (${CMAKE_BINARY_DIR}/prefix/lib)
+    link_directories (${CMAKE_BINARY_DIR}/prefix/lib/${TRIPLE})
 
     include_directories (SYSTEM ${CMAKE_BINARY_DIR}/sdbusplus-src)
     link_directories (${CMAKE_BINARY_DIR}/sdbusplus-src/.libs)
