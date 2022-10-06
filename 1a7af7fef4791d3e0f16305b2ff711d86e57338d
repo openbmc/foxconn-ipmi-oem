@@ -70,6 +70,30 @@
       },
       "revId": "1a7af7fef4791d3e0f16305b2ff711d86e57338d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ae15e5e0_3d58d93a",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000590
+      },
+      "writtenOn": "2022-10-06T19:17:07Z",
+      "side": 1,
+      "message": "this has to be a separate IPMI library which is hosted in the SSIF bridge repo. \nAlso the problem I have with this is, the capabilities that are being presented (multi part, PEC..) here are actually controlled at the kernel driver level. \nIf kernel driver can expose these parameters in sysfs then that will be the best approach. We can have the IPMI lib in the SSIF bridge repo that reads the kernel sysfs and populates these fields.",
+      "parentUuid": "53a26dd2_bee9b665",
+      "range": {
+        "startLine": 63,
+        "startChar": 50,
+        "endLine": 63,
+        "endChar": 80
+      },
+      "revId": "1a7af7fef4791d3e0f16305b2ff711d86e57338d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
