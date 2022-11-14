@@ -32,8 +32,9 @@ struct bios_boot_count
 namespace ipmi
 {
 static void registerBIOSFunctions() __attribute__((constructor));
-ipmi::RspType<uint32_t> FiiBIOSBootCount(boost::asio::yield_context yield,
-                                         std::vector<uint8_t> reqParams)
+ipmi::RspType<uint32_t>
+    FiiBIOSBootCount([[maybe_unused]] boost::asio::yield_context yield,
+                     std::vector<uint8_t> reqParams)
 {
     int boot_count_operation;
     bios_boot_count boot;

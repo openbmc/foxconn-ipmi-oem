@@ -26,7 +26,7 @@ namespace ipmi
 static void registerSystemFunctions() __attribute__((constructor));
 
 ipmi::RspType<std::vector<uint8_t>>
-    FiiSysPCIeInfo(boost::asio::yield_context yield)
+    FiiSysPCIeInfo([[maybe_unused]] boost::asio::yield_context yield)
 {
     std::vector<uint8_t> rsp;
     char buffer[128], *token;
