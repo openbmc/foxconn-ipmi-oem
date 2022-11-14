@@ -1,3 +1,4 @@
+// clang-format off
 /********************************************************************************
 *                       HON HAI Precision IND.Co., LTD.                         *
 *            Personal Computer & Enterprise Product Business Group              *
@@ -13,7 +14,10 @@
 *     permission of FOXCONN/CESBG/CABG/SRD.                                     *
 *                                                                               *
 ********************************************************************************/
+// clang-format on
 #include <unistd.h>
+
+#include <system_error>
 
 std::system_error errnoException(const std::string& message);
 
@@ -23,7 +27,6 @@ void sysclose(int fd_);
 
 void lseeker(int fd_, size_t offset);
 
-void readBin(int fd_, size_t offset, void *ptr, size_t size);
+void readBin(int fd_, size_t offset, void* ptr, size_t size);
 
-void writeBin(int fd_, size_t offset, void *ptr, size_t size);
-
+void writeBin(int fd_, size_t offset, void* ptr, size_t size);
