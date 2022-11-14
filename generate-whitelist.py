@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-import re, sys, os.path
+import re
+import sys
 
 def usage():
     sys.stderr.write("Usage: $0 whitelist-config-in whitelist-header-out\n")
@@ -31,7 +32,7 @@ class entry:
         # type 2, three values: netfn, cmd, channels
         try:
             m = self.linere.fullmatch(data).groups()
-        except:
+        except Exception:
             raise ParseError(data)
         self.netfn = int(m[0], 16)
         self.cmd = int(m[1], 16)
