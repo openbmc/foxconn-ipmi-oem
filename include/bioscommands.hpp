@@ -1,3 +1,4 @@
+// clang-format off
 /********************************************************************************
 *                       HON HAI Precision IND.Co., LTD.                         *
 *            Personal Computer & Enterprise Product Business Group              *
@@ -13,12 +14,17 @@
 *     permission of FOXCONN/CESBG/CABG/SRD.                                     *
 *                                                                               *
 ********************************************************************************/
+// clang-format on
 
 #pragma once
-#define BOOT_COUNT_READ    0x00
-#define BOOT_COUNT_INCREMENT   0x01
-#define BOOT_COUNT_CLEAR   0x02
-#define BOOT_COUNT_SET   0x03
+
+#include <cstddef>
+#include <string>
+
+#define BOOT_COUNT_READ 0x00
+#define BOOT_COUNT_INCREMENT 0x01
+#define BOOT_COUNT_CLEAR 0x02
+#define BOOT_COUNT_SET 0x03
 #define FII_CMD_BIOS_BOOT_COUNT 0x71
 #define OPERATION_BYTE_LENGTH 1
 #define SET_BYTE_LENGTH 5
