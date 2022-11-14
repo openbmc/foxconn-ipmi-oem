@@ -1,3 +1,4 @@
+// clang-format off
 /********************************************************************************
 *                       HON HAI Precision IND.Co., LTD.                         *
 *            Personal Computer & Enterprise Product Business Group              *
@@ -13,7 +14,7 @@
 *     permission of FOXCONN/CESBG/CABG/SRD.                                     *
 *                                                                               *
 ********************************************************************************/
-
+// clang-format on
 #pragma once
 
 #define PCIEINFO_COMMAND "i2cget -y -a -f 26 0x76 0x01 i 2"
