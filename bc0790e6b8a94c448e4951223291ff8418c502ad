@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7f5ee982_a1ed29ee",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T02:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "315b199a_b1eab695",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "17c1f0f2_f523a3d1",
@@ -31,6 +49,24 @@
       "writtenOn": "2022-11-15T01:24:26Z",
       "side": 1,
       "message": "Where does this even get used?",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bde735d2_fe1d36c2",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T02:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "17c1f0f2_f523a3d1",
       "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -52,6 +88,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e5b6a599_089e4048",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T02:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b18ef1d6_9e714ee6",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bdcef8bb_c1bbe73c",
@@ -65,6 +119,24 @@
       "writtenOn": "2022-11-15T01:24:26Z",
       "side": 1,
       "message": "No pkgconfig?",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b84168f3_41521f38",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T02:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bdcef8bb_c1bbe73c",
       "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -86,6 +158,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8d24d3d_0f790859",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T02:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a21096bf_ba1b7db4",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c80d10fb_eb181f05",
@@ -99,6 +189,24 @@
       "writtenOn": "2022-11-15T01:24:26Z",
       "side": 1,
       "message": "No pkgconfig?",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73c8ba3c_4954ebe5",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T02:14:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c80d10fb_eb181f05",
       "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -133,6 +241,24 @@
       "writtenOn": "2022-11-15T01:24:26Z",
       "side": 1,
       "message": "No need for versioning as it\u0027s not included in upstream binaries.",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b950f036_1cfb2687",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T02:14:37Z",
+      "side": 1,
+      "message": "it is included in the upstream: https://github.com/openbmc/openbmc/blob/master/meta-fii/meta-kudo/recipes-kudo/ipmi/fii-ipmi-oem_git.bb\n\nOr do you mean that upstream build doesn\u0027t use it.",
+      "parentUuid": "7104d49e_34c354df",
       "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
