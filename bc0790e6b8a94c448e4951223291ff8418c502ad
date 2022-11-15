@@ -248,6 +248,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ea62f21c_ac492e94",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T22:46:56Z",
+      "side": 1,
+      "message": "Look at how phospohr-ipmi-flash / blobs does it, you don\u0027t need it.\nhttps://github.com/openbmc/phosphor-ipmi-blobs/blob/master/meson.build#L60",
+      "parentUuid": "d313bf83_1c58760e",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7104d49e_34c354df",
         "filename": "meson.build",
         "patchSetId": 3
