@@ -1,0 +1,140 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "315b199a_b1eab695",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T01:24:26Z",
+      "side": 1,
+      "message": "All of these boost flags get added automatically by sdbusplus",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17c1f0f2_f523a3d1",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T01:24:26Z",
+      "side": 1,
+      "message": "Where does this even get used?",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b18ef1d6_9e714ee6",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T01:24:26Z",
+      "side": 1,
+      "message": "Not needed with modern compilers",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bdcef8bb_c1bbe73c",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T01:24:26Z",
+      "side": 1,
+      "message": "No pkgconfig?",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a21096bf_ba1b7db4",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T01:24:26Z",
+      "side": 1,
+      "message": "No pkgconfig?",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c80d10fb_eb181f05",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T01:24:26Z",
+      "side": 1,
+      "message": "No pkgconfig?",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b0402c94_1c4f6dbd",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T01:24:26Z",
+      "side": 1,
+      "message": "should be a shared_module, it gets loaded at runtime.",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7104d49e_34c354df",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2022-11-15T01:24:26Z",
+      "side": 1,
+      "message": "No need for versioning as it\u0027s not included in upstream binaries.",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
