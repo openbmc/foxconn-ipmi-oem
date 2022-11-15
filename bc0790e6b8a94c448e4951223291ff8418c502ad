@@ -264,6 +264,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "73d402b1_7b606844",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T23:20:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea62f21c_ac492e94",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7104d49e_34c354df",
@@ -295,6 +313,24 @@
       "side": 1,
       "message": "it is included in the upstream: https://github.com/openbmc/openbmc/blob/master/meta-fii/meta-kudo/recipes-kudo/ipmi/fii-ipmi-oem_git.bb\n\nOr do you mean that upstream build doesn\u0027t use it.",
       "parentUuid": "7104d49e_34c354df",
+      "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcf239b8_67269ae0",
+        "filename": "meson.build",
+        "patchSetId": 3
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000885
+      },
+      "writtenOn": "2022-11-15T23:20:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b950f036_1cfb2687",
       "revId": "bc0790e6b8a94c448e4951223291ff8418c502ad",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
