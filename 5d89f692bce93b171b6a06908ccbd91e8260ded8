@@ -97,6 +97,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bfe82e6e_8c01d9d8",
+        "filename": "src/systemcommands.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1001166
+      },
+      "writtenOn": "2022-11-17T22:10:04Z",
+      "side": 1,
+      "message": "Yes, it can be removed since not getting used inside the function",
+      "parentUuid": "62ec8595_d63e3a13",
+      "range": {
+        "startLine": 56,
+        "startChar": 89,
+        "endLine": 56,
+        "endChar": 94
+      },
+      "revId": "5d89f692bce93b171b6a06908ccbd91e8260ded8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "516774ad_c4c91894",
         "filename": "src/systemcommands.cpp",
         "patchSetId": 2
