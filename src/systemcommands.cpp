@@ -47,7 +47,7 @@ ipmi::RspType<std::vector<uint8_t>>
     if (token == NULL)
     {
         phosphor::logging::log<phosphor::logging::level::ERR>(
-            "Fii system cmd : Error geting PCIe Info came back null");
+            "Fii system cmd : Error getting PCIe Info came back null");
         ipmi::responseUnspecifiedError();
     }
     token = std::strtok(NULL, " ");
