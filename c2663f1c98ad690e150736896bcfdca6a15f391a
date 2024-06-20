@@ -1,0 +1,7 @@
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+2: Vivekanand Veeracholan <vveerach@google.com>
+Submitted-by: Vivekanand Veeracholan <vveerach@google.com>
+Submitted-at: Thu, 20 Jun 2024 23:19:04 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/foxconn-ipmi-oem/+/72098
+Project: openbmc/foxconn-ipmi-oem
+Branch: refs/heads/master
