@@ -37,28 +37,28 @@ ipmi::RspType<std::vector<uint8_t>>
     // it return two bytes, 1st byte bifurcation, 2nd byte present pin
     if (!pipe)
         throw std::runtime_error("popen() failed !!!");
-    while (fgets(buffer, sizeof(buffer), pipe) != NULL)
+    while (fgets(buffer, sizeof(buffer), pipe) != nullptr)
     {
         std::cerr << " Command : " << buffer << std::endl;
     }
     pclose(pipe);
 
     token = std::strtok(buffer, " ");
-    if (token == NULL)
+    if (token == nullptr)
     {
         phosphor::logging::log<phosphor::logging::level::ERR>(
             "Fii system cmd : Error getting PCIe Info came back null");
         ipmi::responseUnspecifiedError();
     }
-    token = std::strtok(NULL, " ");
-    while (token != NULL)
+    token = std::strtok(nullptr, " ");
+    while (token != nullptr)
     {
         // std::cerr << " Command token: " << token << std::endl;
         value = std::stoul(token, nullptr, 16);
         // std::cerr << " Command value: " << value << ":" << std::hex << value
         // << std::endl;
         rsp.push_back(static_cast<uint8_t>(value & 0xFF));
-        token = std::strtok(NULL, " ");
+        token = std::strtok(nullptr, " ");
     }
 
     return ipmi::responseSuccess(rsp);
