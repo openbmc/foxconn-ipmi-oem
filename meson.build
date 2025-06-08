@@ -2,8 +2,8 @@ project(
     'foxconn-ipmi-oem',
     'cpp',
     version: '0.1',
-    meson_version: '>=0.63.0',
-    default_options: ['werror=true', 'warning_level=3', 'cpp_std=c++20'],
+    meson_version: '>=1.1.1',
+    default_options: ['werror=true', 'warning_level=3', 'cpp_std=c++23'],
 )
 
 root_inc = include_directories('.', 'include')
