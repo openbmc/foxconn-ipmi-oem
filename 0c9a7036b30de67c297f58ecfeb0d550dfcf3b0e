@@ -1,0 +1,7 @@
+Code-Review+2: Benjamin Fair <benjaminfair@google.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Submitted-by: Jayanth Othayoth <ojayanth@gmail.com>
+Submitted-at: Thu, 26 Jun 2025 02:50:42 +0000
+Reviewed-on: https://gerrit.openbmc.org/c/openbmc/foxconn-ipmi-oem/+/76726
+Project: openbmc/foxconn-ipmi-oem
+Branch: refs/heads/master
